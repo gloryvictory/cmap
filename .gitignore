@@ -11,6 +11,8 @@
 
 # production
 /build
+/public/assets
+
 
 # misc
 .DS_Store
