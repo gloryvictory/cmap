@@ -11,8 +11,13 @@ import {
 } from "@esri/calcite-components-react";
 import "@esri/calcite-components/dist/calcite/calcite.css";
 
-function App() {
-  const [sliderValue, setSliderValue] = useState(50);
+// export interface IProps {
+//   view?: ;
+// }
+// const App: React.FC<IProps> = ({view}) =>  {
+
+const App: React.FC = ({}) =>  {
+  const [sliderValue, setSliderValue] = useState<number>(50);
 
   return (
     <>
@@ -22,13 +27,16 @@ function App() {
       <CalciteButton onClick={(e) => setSliderValue(0)}>
         Reset
       </CalciteButton>
-      {/* <CalciteSlider
-        min="1"
-        max="100"
+      <CalciteSlider
         value={sliderValue}
-        step="1"
-        onCalciteSliderUpdate={(e) => setSliderValue(e.target.value)}
-      /> */}
+        min={1}
+        max={100}
+        step={1}
+        // min="1"
+        // max="100"
+        // step="1"
+        // onCalciteSliderUpdate={(e) => setSliderValue(e.target.value)}
+      />
 
       <p>The slider currently has a value of {sliderValue}</p>
     </>

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-// import "@esri/calcite-components/dist/calcite/calcite.css";
-
 // import reportWebVitals from './reportWebVitals';
+
 import { setAssetPath } from "@esri/calcite-components/dist/components";
 
 const calcite_assets = `${window.location.href}` 
 setAssetPath(calcite_assets);
+
 // setAssetPath(window.location.href);
 // setAssetPath("https://unpkg.com/@esri/calcite-components/dist/calcite/assets");
 
