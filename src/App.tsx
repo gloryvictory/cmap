@@ -19,6 +19,25 @@ import "@esri/calcite-components/dist/calcite/calcite.css";
 const App: React.FC = ({}) =>  {
   const [sliderValue, setSliderValue] = useState<number>(50);
 
+  // const handleChange = (event: Event, newValue: number | number[]) => {
+  //   if (typeof newValue === 'number') {
+  //     setValue(newValue);
+  //     drawStrainRegional()
+  //   }
+  // };
+
+  // const Lu_Id = new URLSearchParams(window.location.search).get("lu")  //http://localhost:3000/?lu=123
+
+  // const params = new URLSearchParams(window.location.search)
+  // const lat_str:string = params?.get("lat")?.length ? params.get("lat") : ""
+  // const lat = parseInt(lat_str, 10)  // http://localhost:3000/?lat=123
+
+  const lat = new URLSearchParams(window.location.search).get("lat") // http://localhost:3000/?lon=123
+  const lon = new URLSearchParams(window.location.search).get("lon") // http://localhost:3000/?lon=123
+  
+  console.log(`Lat ${lat}`)
+  console.log(`Lon ${lon}`)
+
   return (
     <>
       <h1>
