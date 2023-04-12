@@ -18,7 +18,7 @@ import {
 const LeftSideBar = () => {
   return (
 
-    <CalciteShellPanel>
+    <CalciteShellPanel content-behind>
         <CalciteActionBar>
             <CalciteAction data-action-id="layers" icon="layers" text="Слои"  onClick={()=>{console.log("clicked")}}/>
             <CalciteAction data-action-id="basemaps" icon="basemap" text="Основа" />
@@ -33,7 +33,7 @@ const LeftSideBar = () => {
         </CalcitePanel>
 
 
-        
+
     </CalciteShellPanel>
     
   )
