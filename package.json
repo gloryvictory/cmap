@@ -46,6 +46,7 @@
     "build": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && react-scripts build",
     "start_old": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@arcgis/core/assets ./public/assets && react-scripts start",
     "build_old": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@arcgis/core/assets ./public/assets && react-scripts build",
+    "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src",

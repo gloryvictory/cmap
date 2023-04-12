@@ -8,7 +8,8 @@ import React, { useState } from "react";
 //   CalciteButton,
 //   CalciteSlider,
 // } from "@esri/calcite-components-react";
-import "@esri/calcite-components/dist/calcite/calcite.css";
+// import "@esri/calcite-components/dist/calcite/calcite.css";
+// import "@esri/calcite-components";
 
 
 import Header from "./Components/UI/Header";
@@ -41,9 +42,8 @@ const App: React.FC = ({}) =>  {
   return (
     <>
       <Header/>
-      <Map/>
       <LeftSideBar/>
-
+      <Map/>
     </>
   );
 }
