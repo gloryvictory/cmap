@@ -3,9 +3,16 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+calcite-loader {
+  align-self: center;
+  justify-self: center;
 }
