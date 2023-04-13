@@ -7,7 +7,7 @@ export default class Map_Settings {
   public apiKey = "";
   
   
-  public portalServer = "https://arcgis";
+  public portalServer = "server";
   public portalUrl = `${this.portalServer}/arcgis`;
 
   public mapId = 'c51ea4b006c94ae296ee460336dd10ec';          // Идентификатор карты  (после webmap= ) https://<Server>/arcgis/home/item.html?id=2a41791214b34f78a893db47a4313115

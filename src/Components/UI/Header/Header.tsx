@@ -4,16 +4,20 @@ import {
     CalciteIcon,
   } from "@esri/calcite-components-react";
 import { MapSettings } from '../../../cfg/settings';
-import "./Header.css"
+
+import"./Header.css"
+
 
   
 
 
 const Header: React.FC = () => {
   return (
-    <h1  id="header-title" >
-    {MapSettings.titleApp} <CalciteIcon icon="banana" />
-  </h1>
+    <header className="header">
+      <h1  id="header-title" >        
+        {MapSettings.titleApp || "...loading"} <CalciteIcon icon="banana" />
+      </h1>
+    </header>
   )
 }
 

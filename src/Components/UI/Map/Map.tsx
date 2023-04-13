@@ -3,19 +3,23 @@ import React, { useRef, useState , useEffect} from 'react'
 import esriConfig from '@arcgis/core/config'
 import MapView from "@arcgis/core/views/MapView";
 import WebMap from "@arcgis/core/WebMap";
+
+import LayerList                from '@arcgis/core/widgets/LayerList';
+
 // import Map from "@arcgis/core/Map";
 
-import "@esri/calcite-components/dist/components/calcite-button";
-import "@esri/calcite-components/dist/components/calcite-slider";
+// import "@esri/calcite-components/dist/components/calcite-button";
+// import "@esri/calcite-components/dist/components/calcite-slider";
 
-import {
-    CalciteButton,
-    CalciteSlider,
-} from "@esri/calcite-components-react";
+// import {
+//     CalciteButton,
+//     CalciteSlider,
+// } from "@esri/calcite-components-react";
 
 import { MapSettings } from '../../../cfg/settings';
 
 import "./Map.css"
+import MapWidgets from './MapWidgets';
 
 function setEsriConfig(){
     esriConfig.apiKey = MapSettings.apiKey;
@@ -47,9 +51,14 @@ const Map: React.FC = () => {
             center: [69.5086144, 70.731533], 
             zoom: 7,
             padding: { left: 49 }
+
+            
             // highlightOptions: {color: "orange" },
-        }).when((view1: __esri.MapView) => setView(view1))
-    
+        }).when((view1: __esri.MapView) => setView(view1)
+            
+        )
+        
+
 
 
 }, []);
@@ -57,6 +66,11 @@ const Map: React.FC = () => {
     return (
     <>
         <div id="mapDiv" className="mapDiv" ></div>
+        {view && (
+        <>
+          <MapWidgets view={view} />
+        </>   
+        )}
     </>
     )
 }
