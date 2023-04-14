@@ -1,18 +1,20 @@
 import React, { useEffect }     from "react";
-import Home                     from "@arcgis/core/widgets/Home";
-import ScaleBar                 from "@arcgis/core/widgets/ScaleBar";
 import Bookmarks                from '@arcgis/core/widgets/Bookmarks';
-import Expand                   from '@arcgis/core/widgets/Expand';
-import Compas                   from '@arcgis/core/widgets/Compass';
 import Legend                   from '@arcgis/core/widgets/Legend';
 import BasemapGallery           from '@arcgis/core/widgets/BasemapGallery';
 import LayerList                from '@arcgis/core/widgets/LayerList';
-import Zoom                     from '@arcgis/core/widgets/Zoom';
-import AreaMeasurement2D        from "@arcgis/core/widgets/AreaMeasurement2D";
-import Fullscreen               from "@arcgis/core/widgets/Fullscreen";
-import DistanceMeasurement2D    from "@arcgis/core/widgets/DistanceMeasurement2D";
-import Search                   from "@arcgis/core/widgets/Search";
-import CoordinateConversion from "@arcgis/core/widgets/CoordinateConversion";
+import Print                   from "@arcgis/core/widgets/Print";
+
+// import Home                     from "@arcgis/core/widgets/Home";
+// import ScaleBar                 from "@arcgis/core/widgets/ScaleBar";
+// import Expand                   from '@arcgis/core/widgets/Expand';
+// import Compas                   from '@arcgis/core/widgets/Compass';
+// import Zoom                     from '@arcgis/core/widgets/Zoom';
+// import AreaMeasurement2D        from "@arcgis/core/widgets/AreaMeasurement2D";
+// import Fullscreen               from "@arcgis/core/widgets/Fullscreen";
+// import DistanceMeasurement2D    from "@arcgis/core/widgets/DistanceMeasurement2D";
+// import Search                   from "@arcgis/core/widgets/Search";
+// import CoordinateConversion from "@arcgis/core/widgets/CoordinateConversion";
 
 
 
@@ -23,15 +25,33 @@ interface IProps {
 const MapWidgets: React.FC<IProps> = ({ view  }) => {
   useEffect(() => {
 
-    view?.ui.empty("top-left");
-    
-    console.log("view!!!!!!!!!!!!!!!!!!!")
-    console.log(view)
+    view?.ui.empty("top-left");    
+    view?.ui.move("zoom", "top-right");
 
     const layerList = new LayerList({
       view,
       selectionEnabled: true,
       container: "layers-container"
+    });
+
+    const basemaps = new BasemapGallery({
+      view,
+      container: "basemaps-container"
+    });
+
+    const bookmarks = new Bookmarks({
+      view,
+      container: "bookmarks-container"
+    }); 
+
+    const legend = new Legend({
+      view,
+      container: "legend-container"
+    });
+
+    const print = new Print({
+      view,
+      container: "print-container"
     });
 
     // кнопка "полный экран"

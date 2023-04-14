@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 
-import LayerList                from '@arcgis/core/widgets/LayerList';
-
 import "@esri/calcite-components/dist/components/calcite-shell-panel";
 import "@esri/calcite-components/dist/components/calcite-panel";
 import "@esri/calcite-components/dist/components/calcite-action-bar";
@@ -18,10 +16,10 @@ import {
     CalciteTooltip,
 } from "@esri/calcite-components-react";
 
-const LeftSideBar = () => {
+const LeftSideBar:React.FC = () => {
 
   const [activeAction, setActiveAction] = useState("");
-  const [actionBarExpanded, setActionBarExpanded] = useState<boolean>(false);
+  const [actionBarExpanded, setActionBarExpanded] = useState<boolean>(true);
   
   const [layersPanel, setLayersPanel] = useState<boolean>(true);
   const [baseMapsPanel, setbaseMapsPanel] = useState<boolean>(true);
@@ -44,12 +42,10 @@ const LeftSideBar = () => {
   ) => {
         setActionBarExpanded(!actionBarExpanded)
         
-
         const target = event.target as HTMLCalciteActionElement;
 
-        console.log(`${target?.id}`)
-        console.log(`${activeAction}`)
-   
+        // console.log(`${target?.id}`)
+        // console.log(`${activeAction}`)
 
         if (target.tagName !== "CALCITE-ACTION") { return; }
 
@@ -64,13 +60,10 @@ const LeftSideBar = () => {
 
             (document.querySelector( `[id=panel-layers]` ) as HTMLCalciteActionElement
             ).hidden = false;
-
-            // setActionBarExpanded(!actionBarExpanded)
-
         }
 
         const nextAction = target.id;
-        console.log(`${nextAction}`)
+        // console.log(`${nextAction}`)
         if (nextAction && nextAction !== activeAction) {          
             ( document.querySelector( `[id=${nextAction}]` ) as HTMLCalciteActionElement
             ).active = true;
@@ -84,6 +77,7 @@ const LeftSideBar = () => {
             setActiveAction(nextAction);
         } else {
                 setActiveAction("");
+
                 // setActionBarExpanded(false)
 
                 }
@@ -93,20 +87,12 @@ const LeftSideBar = () => {
     event: React.MouseEvent<HTMLCalciteActionElement>
   ) => {
     // const target = event.target as HTMLCalciteActionElement;
-    
     // console.log(`clicked ${target}`)
-    // console.log(target)
-    // console.log(`${target?.text}`)
-    // console.log(`${target?.id}`)
-    // console.log(`${target?.tagName}`)
-    // target.active=true   
-        // target.indicator=true 
       clearPanels()
       if (actionBarExpanded){    
         setLayersPanel(false)
       }
-
-    console.log(`${actionBarExpanded}`)
+    // console.log(`${actionBarExpanded}`)
   }
   const handleBaseMapsClick = (event: React.MouseEvent<HTMLCalciteActionElement>) => {
     // const target = event.target as HTMLCalciteActionElement;

@@ -5,10 +5,7 @@
   "keywords": [],
   "author": "Vyacheslav Zamaraev",
   "license": "MIT",
-
-  
   "dependencies": {
-    
     "@arcgis/core": "^4.26.5",
     "@esri/calcite-components": "^1.2.0",
     "@esri/calcite-components-react": "^1.2.0",
@@ -23,29 +20,25 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1"
-    
   },
-
   "devDependencies": {
+    "@types/jest": "^27.5.2",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
-    "@types/jest": "^27.5.2",
     "eslint": "^8.32.0",
     "husky": "^8.0.3",
+    "ncp": "^2.0.0",
     "prettier": "^2.8.3",
     "rimraf": "^4.1.1",
-    "ncp": "^2.0.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
-
-
   "scripts": {
-    "start": "rimraf ./public/assets && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && react-scripts start",
-    "build": "rimraf ./public/assets && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && react-scripts build",
-    "start_old": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@arcgis/core/assets ./public/assets && react-scripts start",
-    "build_old": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@arcgis/core/assets ./public/assets && react-scripts build",
+    "start": "rimraf ./public/assets && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@arcgis/core/assets ./public/assets/core && react-scripts start",
+    "build": "rimraf ./public/assets && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && ncp ./node_modules/@arcgis/core/assets ./public/assets/core && react-scripts build",
+    "start_1": "rimraf ./public/assets && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && react-scripts start",
+    "build_1": "rimraf ./public/assets && ncp ./node_modules/@esri/calcite-components/dist/calcite/assets ./public/assets && react-scripts build",    
     "copy": "ncp ./node_modules/@esri/calcite-components/dist/calcite/assets/ ./public/assets/",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -53,7 +46,6 @@
     "format": "npx eslint ./src --fix",
     "dev": "npx nodemon"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -73,4 +65,3 @@
     ]
   }
 }
-

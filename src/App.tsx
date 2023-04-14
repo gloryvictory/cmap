@@ -22,28 +22,22 @@ import LeftSideBar from "./Components/UI/LeftSideBar";
 
 const App: React.FC = ({}) =>  {
 
-  // const handleChange = (event: Event, newValue: number | number[]) => {
-  //   if (typeof newValue === 'number') {
-  //     setValue(newValue);
-  //     drawStrainRegional()
-  //   }
-  // };
-
-  // const Lu_Id = new URLSearchParams(window.location.search).get("lu")  //http://localhost:3000/?lu=123
+  
+  // const LuId = new URLSearchParams(window.location.search).get("luid")  //http://localhost:3000/?luid=123
 
   const params = new URLSearchParams(window.location.search)
-  const lat_int = parseFloat(params?.get("lat") ?? '0')  // http://localhost:3000/?lat=123.23
-  const lon_int = parseFloat(params?.get("lon") ?? '0')  // http://localhost:3000/?lon=123.433
+  const lat_ = parseFloat(params?.get("lat") ?? '0')  // http://localhost:3000/?lat=123.23
+  const lon_ = parseFloat(params?.get("lon") ?? '0')  // http://localhost:3000/?lon=123.433
   
 
-  console.log(`Lat ${lat_int}`)
-  console.log(`Lon ${lon_int}`)
+  console.log(`Lat ${lat_}`)
+  console.log(`Lon ${lon_}`)
 
   return (
     <>
       <Header/>
       <LeftSideBar/>
-      <Map/>
+      <Map lat={lat_} lon={lon_} />
     </>
   );
 }

@@ -15,7 +15,7 @@
   background-color: var(--calcite-ui-foreground-1);
   display: flex;
   position: fixed;
-  background: #8caee0;
+  background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   z-index: 50;
 }
